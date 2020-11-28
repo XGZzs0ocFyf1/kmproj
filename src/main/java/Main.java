@@ -7,6 +7,18 @@ import java.util.GregorianCalendar;
 public class Main {
 
 
+    public  void createAndInit(){
+        int a = 1;
+        long b = 1l;
+        short c = 1;
+        double d  = 1;
+        char e = 'c';
+        String f = "s";
+        byte g = 1;
+        float h = 1;
+        boolean isSomeThing = false;
+    }
+
     /**
      * @return result of equation a * (b + c / d), where a,b,c,d double numbers
      */
