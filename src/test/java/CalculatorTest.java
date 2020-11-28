@@ -13,5 +13,13 @@ public class CalculatorTest {
         assertEquals(calculator.getEquation( 1 , 1, 3, 2), 2.5, 0.1);
     }
 
+    @Test
+    public void testSum(){
+        assertEquals(calculator.sum(1,2), false);
+        assertEquals(calculator.sum(10,0), true);
+        assertEquals(calculator.sum(20,0), true);
+        assertEquals(calculator.sum(21,0), false);
+    }
+
 
 }
