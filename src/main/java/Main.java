@@ -52,6 +52,9 @@ public class Main {
         return someWhen.isLeapYear();
     }
 
+    /**
+     * @return true if year is leap false if not leap
+     */
 
     public boolean isLeapYearBeforeLocalDate(int year) {
         boolean isLeap = false;
