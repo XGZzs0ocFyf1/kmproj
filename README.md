@@ -1,8 +1,8 @@
-# kmproj
-project for base java code cases
+# HomeWork 
+java project base java code cases
 
 
-#upd
-add 1 method and 1 test for it.
+#About repository
+include homeworks for lesson 1 and lesson 2
 
 
