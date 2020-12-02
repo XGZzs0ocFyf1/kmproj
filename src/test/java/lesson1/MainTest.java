@@ -1,3 +1,6 @@
+package lesson1;
+
+import lesson1.Main;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
