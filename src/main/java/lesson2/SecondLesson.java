@@ -10,7 +10,7 @@ public class SecondLesson {
      * Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
      */
 
-    public int[] invertor() {
+    public int[] inverter() {
         int[] hundred = {0, 1, 1, 0, 0, 1, 0, 0};
         int[] hundredFiftyFive = new int[hundred.length];
         for (int i = 0; i < hundred.length; i++) {
@@ -66,20 +66,15 @@ public class SecondLesson {
      * 5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
      */
     public Pair findMaxAndMinInside() {
-        int size = 10;
         int[] input = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         int min = input[0];
         int max = input[0];
-        for (int i = 0; i < input.length; i++) {
-            int currentValue = input[i];
+        for (int currentValue : input) {
             min = currentValue < min ? currentValue : min;
             max = currentValue > max ? currentValue : max;
         }
         return new Pair(min, max);
-    }
-
-    public void getPair() {
     }
 
 
@@ -103,7 +98,7 @@ public class SecondLesson {
      * @param input int[] the array from which will be summed
      * @param from  the initial index of the range to be copied, inclusive
      * @param to    the final index of the range to be copied, exclusive.
-     * @return
+     * @return sum of all elements in range
      */
     private static int sumOfRange(int[] input, int from, int to) {
         int[] output = Arrays.copyOfRange(input, from, to);
@@ -120,9 +115,13 @@ public class SecondLesson {
      * при этом метод должен сместить все элементымассива на n позиций.
      * Для усложнения задачи нельзя пользоваться вспомогательными массивами.
      */
-    public   <T extends Object> T[] moveNtimes(T[] input, int n) {
+    public   <T> T[] moveNTimes(T[] input, int n) {
         for (int i = 0; i < Math.abs(n); i++) {
-            input = n >= 0 ? moveRight(input) : moveLeft(input);
+            if (n >= 0) {
+                input = moveRight(input); // input = оставил для читабельности
+            } else {
+                input = moveLeft(input);
+            }
         }
         return input;
     }
@@ -133,7 +132,7 @@ public class SecondLesson {
      * @param <T> type
      * @return array moved left by 1 cell
      */
-    private   <T extends Object> T[] moveLeft(T[] input) {
+    private   <T> T[] moveLeft(T[] input) {
         for (int i = 0; i < input.length - 1; i++) {
             T temp = input[i];
             input[i] = input[i + 1];
@@ -143,12 +142,11 @@ public class SecondLesson {
     }
 
     /**
-     *
-     * @param input nput array to move
+     * @param input  array to move
      * @param <T> type
      * @return array moved to right by one cell
      */
-    private static <T extends Object> T[] moveRight(T[] input) {
+    private static <T> T[] moveRight(T[] input) {
         for (int i = input.length - 2; i >= 0; i--) {
             T temp = input[i];
             input[i] = input[i + 1];
