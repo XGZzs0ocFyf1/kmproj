@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class SecondLessonTest {
 
@@ -17,20 +17,20 @@ public class SecondLessonTest {
 
     //todo: я понимаю, что это не боевая задача, но все же как подобные кейсы тестировать?
     @Test
-    public void testInvertor() {
-        assertEquals(true, Arrays.equals(new int[]{1, 0, 0, 1, 1, 0, 1, 1}, secondLesson.invertor()));
+    public void testInverter() {
+        assertArrayEquals(new int[]{1, 0, 0, 1, 1, 0, 1, 1}, secondLesson.inverter());
     }
 
     @Test
-    public void testGetBucnh() {
-        assertEquals(true, Arrays.equals(new int[]{0, 3, 6, 9, 12, 15, 18, 21}, secondLesson.getBunch()));
+    public void testGetBunch() {
+        assertArrayEquals(new int[]{0, 3, 6, 9, 12, 15, 18, 21}, secondLesson.getBunch());
     }
 
     // input [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ]
     // desired output [ 2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2 ]
     @Test
     public void testGetSomeSet() {
-        assertEquals(true, Arrays.equals(new int[]{2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2}, secondLesson.getSomeSet()));
+        assertArrayEquals(new int[]{2, 10, 6, 4, 11, 8, 10, 4, 8, 8, 9, 2}, secondLesson.getSomeSet());
     }
 
 
@@ -59,22 +59,17 @@ public class SecondLessonTest {
 
     @Test
     public void testGetBorderOfEquality() {
-        assertEquals(true, secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 1, 2, 2, 10, 1}));
-        assertEquals(false, secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 1, 2, 2, 2, 2}));
-        assertEquals(true, secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 2}));
-        assertEquals(false, secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 3}));
+        assertTrue(secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 1, 2, 2, 10, 1}));
+        assertFalse(secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 1, 2, 2, 2, 2}));
+        assertTrue(secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 2}));
+        assertFalse(secondLesson.getBorderOfEquality(new int[]{2, 2, 2, 3}));
     }
 
     @Test
     public void testMoveNTimes() {
-        assertEquals(true, Arrays.equals(new Integer[]{8, 9, 0, 1, 2, 3, 4, 5, 6, 7},
-                secondLesson.moveNtimes(new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 2)));
-
-        assertEquals(true, Arrays.equals(new Integer[]{4, 5, 6, 7, 8, 1, 2, 3},
-                secondLesson.moveNtimes(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8}, 5)));
-
-        assertEquals(true, Arrays.equals(new Integer[]{3, 4, 5, 6, 7, 8, 1, 2},
-                secondLesson.moveNtimes(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8}, -2)));
+        assertArrayEquals(new Integer[]{8, 9, 0, 1, 2, 3, 4, 5, 6, 7}, secondLesson.moveNTimes(new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 2));
+        assertArrayEquals(new Integer[]{4, 5, 6, 7, 8, 1, 2, 3}, secondLesson.moveNTimes(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8}, 5));
+        assertArrayEquals(new Integer[]{3, 4, 5, 6, 7, 8, 1, 2}, secondLesson.moveNTimes(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8}, -2));
     }
 
 

@@ -12,14 +12,6 @@ public class Pair {
         this.MIN = min;
     }
 
-    public int getMAX() {
-        return MAX;
-    }
-
-    public int getMIN() {
-        return MIN;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -41,6 +33,7 @@ public class Pair {
                 ", MIN=" + MIN +
                 '}';
     }
+
 
 
 
